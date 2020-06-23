@@ -43,6 +43,26 @@ Course details: [Link](https://rol.redhat.com/rol/app/courses/do101-4.2/pages/pr
 * A route resource associates a DNS host name to an application running in OpenShift
 ![OpenShiftRouteResource](./images/oc1.png)
 
+## Chapter 3. Configuring Application Builds in OpenShift
 
+* Application build can be updated:
+  * By manual trigger
+  * By automatic trigger using webhook
+* To deploy applications on OpenShift, you must create a container image. A container image is a binary package containing an application and all of its dependencies, including the operating system.
+* In OpenShift, a build is the process of creating a runnable container image from application source code. A BuildConfig resource defines the entire build process.
+* OpenShift can create container images from source code without the need for tools such as Docker or Podman. After they are built, application container images are stored and managed from a built-in container registry that comes bundled with the OpenShift platform.
+* Source to Image (S2I) is Openshift supported build process where application source code is combined with an S2I builder image, which is a container image containing the tools, libraries, and frameworks required to run the application.
+
+### Manual Trigger Build
+
+![ManualBuild](./images/oc2.png)
+
+### Automatic Build
+
+* A Webhook is a mechanism to subscribe to events from a source code management system, such as GitHub.
+* OpenShift generates unique webhook URLs for applications that are built from source stored in Git repositories. Webhooks are configured on a Git repository. Based on the webhook configuration, GitHub will send a HTTP POST request to the webhook URL, with details that include the latest commit information.
+* The OpenShift REST API listens for webhook notifications at this URL, and then triggers a new build automatically. 
+
+![AutomaticBuild](./images/oc3.png)
 
 
