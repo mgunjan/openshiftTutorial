@@ -66,3 +66,20 @@ Course details: [Link](https://rol.redhat.com/rol/app/courses/do101-4.2/pages/pr
 ![AutomaticBuild](./images/oc3.png)
 
 
+### Setting up Openshift CLI 
+
+* Download and install openshift cli client
+  [Openshift-Download](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/)
+  ```
+  $ sudo cp oc /usr/local/bin/
+  $ sudo chmod +x /usr/local/bin/oc
+  ```
+
+* Check oc version
+
+  ```
+  $ oc version
+  Client Version: 4.4.8
+  ```
+
+* Login to openshift cluster 
